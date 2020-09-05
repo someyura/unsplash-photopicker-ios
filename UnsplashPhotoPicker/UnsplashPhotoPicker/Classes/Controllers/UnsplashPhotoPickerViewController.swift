@@ -17,7 +17,7 @@ public class UnsplashPhotoPickerViewController: UIViewController {
 
     // MARK: - Properties
 
-    private lazy var cancelBarButtonItem: UIBarButtonItem = {
+    public lazy var cancelBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
@@ -25,7 +25,7 @@ public class UnsplashPhotoPickerViewController: UIViewController {
         )
     }()
 
-    private lazy var doneBarButtonItem: UIBarButtonItem = {
+    public lazy var doneBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
