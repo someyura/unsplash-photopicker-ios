@@ -13,7 +13,7 @@ protocol UnsplashPhotoPickerViewControllerDelegate: class {
     func unsplashPhotoPickerViewControllerDidCancel(_ viewController: UnsplashPhotoPickerViewController)
 }
 
-public class UnsplashPhotoPickerViewController: UIViewController {
+open class UnsplashPhotoPickerViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -108,7 +108,7 @@ public class UnsplashPhotoPickerViewController: UIViewController {
         dataSource.delegate = self
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
