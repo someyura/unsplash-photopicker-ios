@@ -50,6 +50,8 @@ class PhotoCell: UICollectionViewCell {
         
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 3
+        contentView.backgroundColor = .clear
+        self.backgroundColor = .clear
     }
 
     override func prepareForReuse() {
