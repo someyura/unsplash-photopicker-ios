@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name             = 'UnsplashPhotoPicker'
-  spec.version          = '1.1.1'
+  spec.version          = '1.1.2'
   spec.license          = { :type => 'MIT' }
-  spec.homepage         = 'https://github.com/unsplash/unsplash-photopicker-ios'
+  spec.homepage         = 'https://github.com/someyura/unsplash-photopicker-ios'
   spec.authors          = { 'Unsplash' => 'apps@unsplash.com' }
   spec.summary          = 'A photo picker to search for and use photos from Unsplash.'
   spec.source           = { :git => 'https://github.com/unsplash/unsplash-photopicker-ios.git', :tag => '1.1.1' }
