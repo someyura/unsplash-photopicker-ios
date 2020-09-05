@@ -156,7 +156,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
 
     // MARK: - Setup
 
-    public func defineLayout() {
+    open func defineLayout() {
         
         // CollectionView
         
