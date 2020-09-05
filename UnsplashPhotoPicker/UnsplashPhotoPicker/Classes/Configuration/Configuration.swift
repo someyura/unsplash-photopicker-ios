@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Configuration {
+public struct Configuration {
     static var shared: UnsplashPhotoPickerConfiguration = UnsplashPhotoPickerConfiguration()
 }

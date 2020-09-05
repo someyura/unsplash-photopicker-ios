@@ -12,7 +12,7 @@ protocol WaterfallLayoutDelegate: class {
     func waterfallLayout(_ layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
 }
 
-class WaterfallLayout: UICollectionViewLayout {
+public class WaterfallLayout: UICollectionViewLayout {
 
     // MARK: - Public properties
 
@@ -63,7 +63,7 @@ class WaterfallLayout: UICollectionViewLayout {
         super.init(coder: aDecoder)
     }
 
-    override var collectionViewContentSize: CGSize {
+    public override var collectionViewContentSize: CGSize {
         guard let collectionView = collectionView else {
             return CGSize.zero
         }
@@ -76,7 +76,7 @@ class WaterfallLayout: UICollectionViewLayout {
         return CGSize(width: width, height: contentHeight)
     }
 
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var attributes = [UICollectionViewLayoutAttributes]()
         var firstFrameIndex: Int = 0
         var lastFrameIndex: Int = frames.count
@@ -107,11 +107,11 @@ class WaterfallLayout: UICollectionViewLayout {
         return attributes
     }
 
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    public override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return layoutAttributes[indexPath.item]
     }
 
-    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    public override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if elementKind == UICollectionView.elementKindSectionFooter {
             return pagingViewAttributes
         }
@@ -119,13 +119,13 @@ class WaterfallLayout: UICollectionViewLayout {
         return nil
     }
 
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         guard let bounds = collectionView?.bounds else { return false }
         return bounds.width != newBounds.width
     }
 
     // swiftlint:disable function_body_length
-    override func prepare() {
+    public override func prepare() {
         super.prepare()
 
         reset()
