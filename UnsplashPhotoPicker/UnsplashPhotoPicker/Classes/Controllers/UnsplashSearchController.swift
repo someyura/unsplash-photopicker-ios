@@ -8,17 +8,17 @@
 
 import UIKit
 
-class UnsplashSearchController: UISearchController {
+public class UnsplashSearchController: UISearchController {
     lazy var customSearchBar = CustomSearchBar(frame: CGRect.zero)
 
-    override var searchBar: UISearchBar {
+    public override var searchBar: UISearchBar {
         customSearchBar.showsCancelButton = false
         return customSearchBar
     }
 }
 
-class CustomSearchBar: UISearchBar {
-    override func setShowsCancelButton(_ showsCancelButton: Bool, animated: Bool) {
+public class CustomSearchBar: UISearchBar {
+    public override func setShowsCancelButton(_ showsCancelButton: Bool, animated: Bool) {
         super.setShowsCancelButton(false, animated: false)
     }
 }

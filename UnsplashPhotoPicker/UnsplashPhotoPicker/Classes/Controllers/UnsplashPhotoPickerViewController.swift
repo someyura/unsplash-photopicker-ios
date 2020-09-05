@@ -33,15 +33,15 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         )
     }()
 
-    public lazy var searchController: UISearchController = {
-        let searchController = UnsplashSearchController(searchResultsController: nil)
-        searchController.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "search.placeholder".localized()
-        searchController.searchBar.autocapitalizationType = .none
-        return searchController
+    public lazy var searchBar: UISearchBar = {
+        let searchBar = CustomSearchBar(frame: .zero)
+//        searchController.delegate = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.hidesNavigationBarDuringPresentation = false
+        searchBar.delegate = self
+        searchBar.placeholder = "search.placeholder".localized()
+        searchBar.autocapitalizationType = .none
+        return searchBar
     }()
 
     private lazy var layout = WaterfallLayout(with: self)
@@ -143,7 +143,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Fix to avoid a retain issue
-        searchController.dismiss(animated: true, completion: nil)
+//        searchController.dismiss(animated: true, completion: nil)
     }
 
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -251,13 +251,13 @@ open class UnsplashPhotoPickerViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func cancelBarButtonTapped(sender: AnyObject?) {
-        searchController.searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
 
         delegate?.unsplashPhotoPickerViewControllerDidCancel(self)
     }
 
     @objc private func doneBarButtonTapped(sender: AnyObject?) {
-        searchController.searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
 
         let selectedPhotos = collectionView.indexPathsForSelectedItems?.reduce([], { (photos, indexPath) -> [UnsplashPhoto] in
             var mutablePhotos = photos
@@ -385,8 +385,8 @@ extension UnsplashPhotoPickerViewController: UISearchBarDelegate {
 // MARK: - UIScrollViewDelegate
 extension UnsplashPhotoPickerViewController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if searchController.searchBar.isFirstResponder {
-            searchController.searchBar.resignFirstResponder()
+        if searchBar.isFirstResponder {
+            searchBar.resignFirstResponder()
         }
     }
 }
