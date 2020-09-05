@@ -48,10 +48,12 @@ class PhotoCell: UICollectionViewCell {
         setupCheckmarkView()
         updateSelectedState()
         
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 3
-        contentView.backgroundColor = .clear
-        self.backgroundColor = .clear
+//        contentView.clipsToBounds = true
+//        contentView.layer.cornerRadius = 3
+//        contentView.backgroundColor = .clear
+//        
+//        self.clipsToBounds = true
+//        self.backgroundColor = .clear
     }
 
     override func prepareForReuse() {
