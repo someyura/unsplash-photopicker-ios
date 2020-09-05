@@ -46,7 +46,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
 
     private lazy var layout = WaterfallLayout(with: self)
 
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
@@ -60,7 +60,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         return collectionView
     }()
 
-    private let spinner: UIActivityIndicatorView = {
+    public let spinner: UIActivityIndicatorView = {
         if #available(iOS 13.0, *) {
             let spinner = UIActivityIndicatorView(style: .medium)
             spinner.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +74,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         }
     }()
 
-    private lazy var emptyView: EmptyView = {
+    public lazy var emptyView: EmptyView = {
         let view = EmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

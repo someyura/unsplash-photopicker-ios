@@ -36,7 +36,7 @@ enum EmptyViewState {
     }
 }
 
-class EmptyView: UIView {
+public class EmptyView: UIView {
 
     // MARK: - Properties
 
