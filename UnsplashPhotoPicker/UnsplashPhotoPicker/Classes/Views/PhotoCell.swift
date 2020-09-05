@@ -47,6 +47,9 @@ class PhotoCell: UICollectionViewCell {
         setupPhotoView()
         setupCheckmarkView()
         updateSelectedState()
+        
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 3
     }
 
     override func prepareForReuse() {
