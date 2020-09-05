@@ -100,7 +100,7 @@ public class UnsplashPhotoPickerViewController: UIViewController {
 
     // MARK: - Lifetime
 
-    init() {
+    public init() {
         self.dataSource = editorialDataSource
 
         super.init(nibName: nil, bundle: nil)
