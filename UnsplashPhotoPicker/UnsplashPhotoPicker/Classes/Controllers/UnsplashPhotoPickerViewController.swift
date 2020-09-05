@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol UnsplashPhotoPickerViewControllerDelegate: class {
+public protocol UnsplashPhotoPickerViewControllerDelegate: class {
     func unsplashPhotoPickerViewController(_ viewController: UnsplashPhotoPickerViewController, didSelectPhotos photos: [UnsplashPhoto])
     func unsplashPhotoPickerViewControllerDidCancel(_ viewController: UnsplashPhotoPickerViewController)
 }
@@ -96,7 +96,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
     private var previewingContext: UIViewControllerPreviewing?
     private var searchText: String?
 
-    weak var delegate: UnsplashPhotoPickerViewControllerDelegate?
+    public weak var delegate: UnsplashPhotoPickerViewControllerDelegate?
 
     // MARK: - Lifetime
 
