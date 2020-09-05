@@ -33,7 +33,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         )
     }()
 
-    private lazy var searchController: UISearchController = {
+    public lazy var searchController: UISearchController = {
         let searchController = UnsplashSearchController(searchResultsController: nil)
         searchController.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
