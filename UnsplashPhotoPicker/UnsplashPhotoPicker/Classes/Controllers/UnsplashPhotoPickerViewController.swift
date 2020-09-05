@@ -179,7 +179,7 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         ])
     }
     
-    public func addEmptyView() {
+    open func addEmptyView() {
         view.addSubview(emptyView)
 
         NSLayoutConstraint.activate([
