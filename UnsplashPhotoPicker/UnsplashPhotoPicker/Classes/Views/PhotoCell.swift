@@ -13,6 +13,8 @@ class PhotoCell: UICollectionViewCell {
     // MARK: - Properties
 
     static let reuseIdentifier = "PhotoCell"
+    
+    public var photoID: String? = nil
 
     let photoView: PhotoView = {
         // swiftlint:disable force_cast
@@ -74,6 +76,7 @@ class PhotoCell: UICollectionViewCell {
     // MARK: - Setup
 
     func configure(with photo: UnsplashPhoto) {
+        self.photoID = photo.identifier
         photoView.configure(with: photo)
     }
 
