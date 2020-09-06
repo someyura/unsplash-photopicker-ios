@@ -40,13 +40,13 @@ public class EmptyView: UIView {
 
     // MARK: - Properties
 
-    private lazy var containerView: UIView = {
+    public lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -56,7 +56,7 @@ public class EmptyView: UIView {
         return label
     }()
 
-    private lazy var descriptionLabel: UILabel = {
+    public lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
