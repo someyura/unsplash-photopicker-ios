@@ -315,7 +315,8 @@ open class UnsplashPhotoPickerViewController: UIViewController {
         }
 
         let bottomInset = keyboardSize.height - view.safeAreaInsets.bottom
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottomInset, right: 0.0)
+        var contentInsets = collectionView.contentInset // UIEdgeInsets(top: 0.0, left: 0.0, bottom: bottomInset, right: 0.0)
+        contentInsets.bottom = bottomInset
 
         UIView.animate(withDuration: duration) { [weak self] in
             self?.collectionView.contentInset = contentInsets
@@ -325,9 +326,12 @@ open class UnsplashPhotoPickerViewController: UIViewController {
 
     @objc func keyboardWillHideNotification(_ notification: Notification) {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
-
+        
+        var contentInsets = collectionView.contentInset
+        contentInsets.bottom = 0
+        
         UIView.animate(withDuration: duration) { [weak self] in
-            self?.collectionView.contentInset = .zero
+            self?.collectionView.contentInset = contentInsets
             self?.collectionView.scrollIndicatorInsets = .zero
         }
     }
