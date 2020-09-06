@@ -62,8 +62,8 @@ class PhotoCell: UICollectionViewCell {
     }
 
     private func updateSelectedState() {
-        photoView.alpha = isSelected ? 0.7 : 1
-        checkmarkView.alpha = isSelected ? 1 : 0
+        photoView.alpha = 1 // isSelected ? 0.7 : 1
+        checkmarkView.alpha = 0 // isSelected ? 1 : 0
     }
 
     // Override to bypass some expensive layout calculations.
