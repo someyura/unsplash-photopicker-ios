@@ -196,7 +196,6 @@ open class UnsplashPhotoPickerViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        updateTitle()
         navigationItem.leftBarButtonItem = cancelBarButtonItem
 
         if Configuration.shared.allowsMultipleSelection {
@@ -238,10 +237,6 @@ open class UnsplashPhotoPickerViewController: UIViewController {
 
     private func hideEmptyView() {
         emptyView.removeFromSuperview()
-    }
-
-    func updateTitle() {
-        title = String.localizedStringWithFormat("title".localized(), numberOfSelectedPhotos)
     }
 
     func updateDoneButtonState() {
@@ -365,7 +360,6 @@ extension UnsplashPhotoPickerViewController: UISearchBarDelegate {
         refresh()
         scrollToTop()
         hideEmptyView()
-        updateTitle()
         updateDoneButtonState()
     }
 
@@ -377,7 +371,6 @@ extension UnsplashPhotoPickerViewController: UISearchBarDelegate {
         reloadData()
         scrollToTop()
         hideEmptyView()
-        updateTitle()
         updateDoneButtonState()
     }
 }
