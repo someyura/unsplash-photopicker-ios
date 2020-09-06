@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoCell: UICollectionViewCell {
+public class PhotoCell: UICollectionViewCell {
 
     // MARK: - Properties
 
@@ -27,7 +27,7 @@ class PhotoCell: UICollectionViewCell {
         return CheckmarkView()
     }()
 
-    override var isSelected: Bool {
+    public override var isSelected: Bool {
         didSet {
             updateSelectedState()
         }
@@ -58,7 +58,7 @@ class PhotoCell: UICollectionViewCell {
 //        self.backgroundColor = .clear
     }
 
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
         photoView.prepareForReuse()
     }
@@ -69,7 +69,7 @@ class PhotoCell: UICollectionViewCell {
     }
 
     // Override to bypass some expensive layout calculations.
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+    public override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         return .zero
     }
 

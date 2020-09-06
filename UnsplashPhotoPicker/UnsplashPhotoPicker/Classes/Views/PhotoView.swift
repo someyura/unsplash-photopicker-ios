@@ -8,14 +8,14 @@
 
 import UIKit
 
-class PhotoView: UIView {
+public class PhotoView: UIView {
 
     static var nib: UINib { return UINib(nibName: "PhotoView", bundle: Bundle(for: PhotoView.self)) }
 
     private var imageDownloader = ImageDownloader()
     private var screenScale: CGFloat { return UIScreen.main.scale }
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet public weak var imageView: UIImageView!
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet var overlayViews: [UIView]!
@@ -27,7 +27,7 @@ class PhotoView: UIView {
         }
     }
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
 
         accessibilityIgnoresInvertColors = true
@@ -44,7 +44,7 @@ class PhotoView: UIView {
         imageDownloader.cancel()
     }
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let fontSize: CGFloat = traitCollection.horizontalSizeClass == .compact ? 10 : 13
         userNameLabel.font = UIFont.systemFont(ofSize: fontSize)
