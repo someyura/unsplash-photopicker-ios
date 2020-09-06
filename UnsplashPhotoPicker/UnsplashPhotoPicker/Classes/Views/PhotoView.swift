@@ -60,7 +60,7 @@ class PhotoView: UIView {
     }
 
     private func downloadImage(with photo: UnsplashPhoto) {
-        guard let regularUrl = photo.urls[.regular] else { return }
+        guard let regularUrl = photo.urls[.small] else { return }
 
         let url = sizedImageURL(from: regularUrl)
 
